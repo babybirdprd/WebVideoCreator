@@ -3,8 +3,13 @@
   "version": "0.0.34",
   "description": "A framework for creating videos based on Node.js + Puppeteer + FFmpeg.",
   "type": "module",
-  "main": "index.js",
-  "scripts": {},
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "clean": "rm -rf dist",
+    "build": "npm run clean && tsc",
+    "build:watch": "tsc --watch"
+  },
   "author": "Vinlic",
   "license": "Apache-2.0",
   "repository": {
@@ -12,6 +17,7 @@
     "url": "https://github.com/Vinlic/WebVideoCreator.git"
   },
   "files": [
+    "dist/",
     "api/",
     "core/",
     "docs/",
@@ -71,5 +77,16 @@
     "mp4box": "^0.5.2",
     "puppeteer-core": "^21.3.4",
     "uniqid": "^5.4.0"
+  },
+  "devDependencies": {
+    "@types/async-lock": "^1.4.2",
+    "@types/cli-progress": "^3.11.6",
+    "@types/fluent-ffmpeg": "^2.1.27",
+    "@types/fs-extra": "^11.0.4",
+    "@types/lodash": "^4.17.16",
+    "@types/node": "^22.14.0",
+    "@types/puppeteer-core": "^5.4.0",
+    "@types/uniqid": "^5.3.4",
+    "typescript": "^5.8.2"
   }
 }
